@@ -1,0 +1,61 @@
+bpp-actual-clean  -> -pre-clean 
+bpp-run-app-client  -> tools
+bpp-run-secure-app-client  -> tools
+clean  -> -pre-clean
+clean  -> bpp-actual-clean
+clean  -> -post-clean
+client-jar  -> tools>
+compile  -> -pre-compile
+compile  -> -bpp-actual-compilation
+compile  -> -post-compile 
+create-javamail-resource   -> tools
+create-jdbc-connection-pool  -> tools 
+create-jdbc-resource   -> tools
+create-jms-connection-factory   -> tools
+create-jms-connection-factory-prop   -> tools
+create-jms-resource   -> tools
+create-persistence-resource  -> tools
+delete-javamail-resource   -> tools
+init  -> -pre-init
+keydel-common  -> tools
+keygen-common  -> tools
+launch  -> getBrowser 
+listJmsDestinations 
+package  -> -post-compile
+package  -> -post-compile 
+package  -> -post-compile 
+-pre-deploy  -> create-tables
+reconfig  -> tools
+run-deploy  -> deploy
+schemagen-generate  -> schemagen-init
+start-db  -> tools 
+start-domain  -> tools
+stop-db  -> tools 
+stop-domain  -> tools
+tools  -> check
+undeploy  -> tools
+wsimport-client-check  -> wsimport-init
+xjc-generate  -> xjc-init
+default  -> default-ear
+default  -> default-not-ear
+default-not-ear unlesis.ear.module  -> init
+default-not-ear unlesis.ear.module  -> compile
+default-not-ear unlesis.ear.module  -> package
+default-not-ear unlesis.ear.module  -> bpp-copy-dist
+deploy  -> tools
+deploy  -> -pre-deploy
+run  -> default
+run  -> deploy
+run  -> launch
+runapp  -> compile
+runapp  -> run-20
+runapp  -> run-21
+schemagen-init  -> init
+schemagen-init  -> check-jdk6-environment
+wsimport-client-generate  -> wsimport-init
+wsimport-client-generate  -> wsimport-client-generate-secure
+wsimport-client-generate  -> wsimport-client-generate-nosecure
+wsimport-init  -> init
+wsimport-init  -> check-jdk6-environment
+xjc-init  -> init
+xjc-init  -> check-jdk6-environment

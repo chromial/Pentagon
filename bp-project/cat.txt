@@ -1,0 +1,9 @@
+default  --> default-ear,default-not-ear
+default-not-ear unlesis.ear.module  --> init,compile,package,bpp-copy-dist
+deploy  --> tools,-pre-deploy
+run  --> default,deploy,launch 
+runapp  --> compile,run-20,run-21
+schemagen-init  --> init, check-jdk6-environment
+wsimport-client-generate  --> wsimport-init,wsimport-client-generate-secure,wsimport-client-generate-nosecure
+wsimport-init  --> init,check-jdk6-environment
+xjc-init  --> init, check-jdk6-environment
